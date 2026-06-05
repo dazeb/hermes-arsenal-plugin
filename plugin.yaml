@@ -1,0 +1,16 @@
+name: arsenal
+version: 0.2.0
+description: Agent-driven offensive security lab — 764 skills, 22 lab targets, 5-phase attack workflow
+author: dazeb
+homepage: https://github.com/dazeb/arsenal-cli
+toolsets:
+  - arsenal
+requires:
+  commands:
+    - node
+    - nmap
+    - dig
+    - curl
+    - openssl
+  env:
+    - ARSENAL_HOME
