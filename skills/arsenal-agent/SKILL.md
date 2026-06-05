@@ -132,6 +132,32 @@ If the target is a lab on the Proxmox host:
 | vuln-mgmt | 25 | vulnerability management, SSVC triage |
 | compliance | 7 | governance, risk, compliance, privacy |
 
+## Automated Pipeline (Cron-Driven)
+
+The Arsenal pipeline can run autonomously via skill chaining. The full pipeline:
+
+```
+arsenal-pipeline-starter (cron: daily 3am)
+  → arsenal-phase-recon (deploy + recon targets)
+    → arsenal-phase-skill-match (map findings to skills)
+      → arsenal-phase-execute (run exploit playbooks)
+        → arsenal-phase-report (compile markdown report)
+          → arsenal-phase-notify (Telegram delivery)
+```
+
+Each phase is a standalone skill with `on_complete` triggers. When running in
+automated/manual mode and you complete a full attack, chain into the report:
+
+## Chaining Configuration
+
+on_complete:
+  - trigger: arsenal-phase-report
+    condition: "output contains attack complete"
+    pass_output: true
+  - trigger: arsenal-phase-notify
+    condition: "output contains FLAG"
+    pass_output: true
+
 ## Rules
 
 1. **Always recon first** — never attempt exploitation without recon intel

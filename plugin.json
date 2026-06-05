@@ -1,9 +1,9 @@
 {
   "name": "arsenal",
-  "version": "0.2.0",
-  "description": "Arsenal CLI — agent-driven offensive security lab. 764 skills, 22 lab targets, 5-phase attack workflow.",
+  "version": "0.3.0",
+  "description": "Agent-driven offensive security lab — 764 skills, 22 lab targets, 5-phase attack workflow, automated pipeline chaining (cron \u2192 recon \u2192 match \u2192 execute \u2192 report \u2192 notify)",
   "author": "dazeb",
-  "homepage": "https://github.com/dazeb/arsenal-cli",
+  "homepage": "https://github.com/dazeb/hermes-arsenal-plugin",
   "toolsets": ["arsenal"],
   "requires": {
     "commands": ["node", "nmap", "dig", "curl", "openssl"],
