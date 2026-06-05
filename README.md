@@ -115,7 +115,6 @@ From any Hermes session: mention "scan my lab targets" or "run the arsenal pipel
 
 - **Plugin:** https://github.com/dazeb/hermes-arsenal-plugin
 - **Arsenal CLI:** https://github.com/dazeb/arsenal-cli
-- **Skills source:** OpenHack redteam collection (764 SKILL.md files)
 
 ## License
 
